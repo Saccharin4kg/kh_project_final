@@ -15,4 +15,12 @@ public class MainController {
 		mv.setViewName("administrative/administrationMain");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/ProductionManagement", method = { RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView ProductionManagement() {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("ProductionManagement/ProductionManagement");
+		return mv;
+	}
 }
