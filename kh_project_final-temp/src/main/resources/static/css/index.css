@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	
+}
+
+#header>#menu {
+	height: 150px;
+	width: 1200px;
+	background-color: gray;
+	position: relative;
+}
+
+#header>#menu>ul {
+	position: absolute;
+	bottom: 0;
+	right: 20px;
+}
+
+#header>#menu>ul>li {
+	height:70px;
+	width: 230px;
+	background-color: white;
+	text-align: center;
+	list-style: none;
+	float: left;
+	border: 2px solid black;
+	margin-left: 10px
+}
+
+#main{
+	height: 800px;
+	width: 1200px;
+}
+
+#footer {
+	height: 150px;
+	width: 1200px;
+	background-color: gray;
+}
