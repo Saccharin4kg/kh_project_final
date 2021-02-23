@@ -3,6 +3,7 @@
 body{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 #header {
@@ -34,7 +35,7 @@ body{
 }
 
 #main{
-	height: 800px;
+	height: 500px;
 	width: 1200px;
 }
 
