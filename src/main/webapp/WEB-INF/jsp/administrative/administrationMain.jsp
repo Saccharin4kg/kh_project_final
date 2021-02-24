@@ -5,8 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>행정 메인화면</title>
-<link rel='stylesheet' type='text/css'
-	href='css/administration/administration.css' />
+<link rel='stylesheet' type='text/css' href='css/administration/administration.css' />
 <script src='js/administration.js'></script>
 </head>
 <body>
@@ -15,13 +14,13 @@
 			<ul id=''>
 				<li><a href='#내결재' onclick="adGoUrl('/myApproval')">내결재</a></li>
 				<li><a href='#결재대기' onclick="adGoUrl('/waitApproval')">결재대기</a></li>
-				<li><a href=''>품위</a>
+				<li><a href=''>품의</a>
 					<ul>
-						<li><a href='#품위임시보관' onclick="adGoUrl('/stuffTemp')">임시보관</a></li>
-						<li><a href='#품위결재완료' onclick="adGoUrl('/stuffComplete')">결재완료</a></li>
-						<li><a href='#품위결재보류' onclick="adGoUrl('/stuffHold')">결재보류</a></li>
-						<li><a href='#품위결재부결' onclick="adGoUrl('/stuffRejection')">결재부결</a></li>
-						<li><a href='#품위작성' onclick="adGoUrl('/stuffWrite')">작성</a></li>
+						<li><a href='#품의임시보관' onclick="adGoUrl('/stuffTemp')">임시보관</a></li>
+						<li><a href='#품의결재완료' onclick="adGoUrl('/stuffComplete')">결재완료</a></li>
+						<li><a href='#품의결재보류' onclick="adGoUrl('/stuffHold')">결재보류</a></li>
+						<li><a href='#품의결재부결' onclick="adGoUrl('/stuffRejection')">결재부결</a></li>
+						<li><a href='#품의작성' onclick="adGoUrl('/stuffWrite')">작성</a></li>
 					</ul>
 				</li>
 				<li><a href=''>근태</a>
