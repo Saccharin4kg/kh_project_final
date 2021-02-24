@@ -5,30 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-	#approvalTable{
-	text-align: center;
-	}
-	#end{
-	height: 60px;
-	}
-	.date {
-	width: 60px;
-	}
-	#reason{
-	width: 680px;
-	height: 160px;
-	resize: none;
-	}
-	.stamp{
-	height: 50px;
-	}
-	#tmi{
-	width: 420px;
-	height: 67px;
-	resize: none;
-	}
-</style>
+<link rel='stylesheet' type='text/css' href='css/administration/approvalform.css' />
 </head>
 <body>
 <div id='approvalWrite'>
@@ -83,6 +60,10 @@
 					<option value="">조퇴</option>
 				</select>
 			</td>
+		</tr>
+		<tr>
+			<td>제목</td>
+			<td colspan="10"><input type='text' id='reasonTitle'/></td>
 		</tr>
 		<tr>
 			<td>사유</td>

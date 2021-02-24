@@ -14,7 +14,7 @@
 			<ul id=''>
 				<li><a href='#내결재' onclick="adGoUrl('/myApproval')">내결재</a></li>
 				<li><a href='#결재대기' onclick="adGoUrl('/waitApproval')">결재대기</a></li>
-				<li><a href=''>품의</a>
+				<li>품의
 					<ul>
 						<li><a href='#품의임시보관' onclick="adGoUrl('/stuffTemp')">임시보관</a></li>
 						<li><a href='#품의결재완료' onclick="adGoUrl('/stuffComplete')">결재완료</a></li>
@@ -23,7 +23,7 @@
 						<li><a href='#품의작성' onclick="adGoUrl('/stuffWrite')">작성</a></li>
 					</ul>
 				</li>
-				<li><a href=''>근태</a>
+				<li>근태
 					<ul>
 						<li><a href='#근태임시보관' onclick="adGoUrl('/attendanceTemp')">임시보관</a></li>
 						<li><a href='#근태결재완료' onclick="adGoUrl('/attendanceComplete')">결재완료</a></li>
@@ -32,7 +32,7 @@
 						<li><a href='#근태작성' onclick="adGoUrl('/attendanceWrite')">작성</a></li>
 					</ul>
 				</li>
-				<li><a href=''>기안</a>
+				<li>기안
 					<ul>
 						<li><a href='#기안임시보관' onclick="adGoUrl('/draftTemp')">임시보관</a></li>
 						<li><a href='#기안결재완료' onclick="adGoUrl('/draftComplete')">결재완료</a></li>
