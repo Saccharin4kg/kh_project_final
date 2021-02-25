@@ -18,7 +18,7 @@
 			<ul>
 				<li><a href=''>KH ERP프로그램</a></li>
 				<li><a href='#' onclick="goUrl('/ProductionManagement')">생산 관리</a></li>
-				<li><a href='#행정관리' onclick="goUrl('/administrationMain')">행정 관리</a></li>
+				<li><a href='#' onclick="goUrl('/administrationMain')">행정 관리</a></li>
 				<li><a href=''>인사 관리</a></li>
 			</ul>
 		</div>

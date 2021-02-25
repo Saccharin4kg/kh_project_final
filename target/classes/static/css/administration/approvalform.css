@@ -1,12 +1,7 @@
 @charset "UTF-8";
 
-#approvalWrite{
-	width: 750px;
-	
-}
-
 #approvalTable {
-	margin-top: 20px;
+	margin-top: 30px;
 	text-align: center;
 	border-collapse: collapse;
 }
@@ -19,38 +14,22 @@
 	width: 60px;
 }
 
-#content {
+#reason {
 	width: 680px;
-	height: 200px;
-	resize: none;
-}
-
-#contentsmall {
-	width: 680px;
-	height: 60px;
+	height: 160px;
 	resize: none;
 }
 
 .stamp {
 	height: 50px;
-	width: 60px;
 }
 
 #tmi {
-	width: 460px;
+	width: 420px;
 	height: 67px;
 	resize: none;
 }
 
 #reasonTitle {
 	width: 680px;
-}
-
-#tabelhead {
-	width: 60px;
-}
-
-#fileUpload{
-	margin-left: 10px;
-	width: 560px;
 }

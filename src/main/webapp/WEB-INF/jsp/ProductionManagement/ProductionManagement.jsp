@@ -12,9 +12,9 @@
 <div id ='ProductionManagementMain'>
 	<div id='PmMenu'>
 	<ul id=''>
-		<li><a href='#입고' onclick="PmgoUrl('/WarehousingSelect')">입고</a></li>
-		<li><a href='#출고' onclick="PmgoUrl('/ReleaseSelect')">출고</a></li>
-		<li><a href='#재고' onclick="PmgoUrl('/StockSelect')">재고</a></li>
+		<li class='Ws'><a href='#입고' onclick="PmgoUrl('/WarehousingSelect')">입고</a></li>
+		<li class='Rs'><a href='#출고' onclick="PmgoUrl('/ReleaseSelect')">출고</a></li>
+		<li class='Ss'><a href='#재고' onclick="PmgoUrl('/StockSelect')">재고</a></li>
 	</ul>
 	</div>
 	<div id='PmShow'></div>

@@ -18,7 +18,7 @@
 			<td colspan="2">부서</td>
 			<td colspan="2">성명</td>
 			<td colspan="2">직급</td>
-			<td colspan="4">사원번호</td>
+			<td colspan="4">입사일자</td>
 		</tr>
 		<tr>
 			<td colspan="2">　</td>
@@ -62,12 +62,12 @@
 			</td>
 		</tr>
 		<tr>
-			<td id='tabelhead'>제목</td>
+			<td>제목</td>
 			<td colspan="10"><input type='text' id='reasonTitle'/></td>
 		</tr>
 		<tr>
 			<td>사유</td>
-			<td colspan="10"><textarea id='content'></textarea></td>
+			<td colspan="10"><textarea id='reason'></textarea></td>
 		</tr>
 		<tr>
 			<td colspan="11" id='end'>사유와 같이 근태계를 제출하오니 재가하여 주시기 바랍니다.</td>
@@ -86,9 +86,7 @@
 			<td class='stamp'></td>
 		</tr>
 	</table>
-	<input type='file' name='attFile' multiple='multiple' id='fileUpload'/>
-	<input type='button' value='취소' onclick="goUrl('/administrationMain');location.href='#행정관리'"/>
-	<input type='button' value='작성중지'/>
+	<input type='button' value='취소'/>
 	<input type='button' value='임시보관'/>
 	<input type='button' value='확인'/>
 </div>
