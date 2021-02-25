@@ -31,7 +31,9 @@ body{
 	list-style: none;
 	float: left;
 	border: 2px solid black;
-	margin-left: 10px
+	margin-left: 10px;
+	font-size: 20px;
+	padding-top: 20px;
 }
 
 #main{

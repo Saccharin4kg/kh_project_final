@@ -7,5 +7,5 @@ chk = function() {
 }
 
 function PmgoUrl(url) {
-	$('#Pmshow').load(url);
+	$('#PmShow').load(url);
 }
