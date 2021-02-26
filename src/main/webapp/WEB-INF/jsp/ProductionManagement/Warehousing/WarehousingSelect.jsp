@@ -9,7 +9,6 @@
 </head>
 <body>
 <div id="WsMain">
-<div>
 <form name="Ws" method="post">
 <div id="table-scroll" class="table-scroll">
   <div class="table-wrap">
@@ -81,7 +80,6 @@
 			<input type='button' value='삭제' id='btnDelete' />
 		</div>
       </form>
-      </div>
 </div>
 </body>
 </html>
