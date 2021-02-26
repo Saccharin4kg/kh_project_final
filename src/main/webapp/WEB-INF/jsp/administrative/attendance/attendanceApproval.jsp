@@ -21,7 +21,7 @@ text-align:right;
 			<td colspan="11"><h3>근태결재서</h3></td>
 		</tr>
 		<tr>
-			<td rowspan="2">대상자</td>
+			<td rowspan="2" class='minsize90'>대상자</td>
 			<td colspan="2">부서</td>
 			<td colspan="2">성명</td>
 			<td colspan="2">직급</td>

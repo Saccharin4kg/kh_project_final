@@ -23,21 +23,7 @@
 		<span class='date'>작성일</span>
 		<span class='appr'>결재자</span>
 	</div>
-	<div class='items'>
-		<div class='item' onclick="adGoUrl('/stuffApproval')">
-			<span class='no'>1</span>
-			<span class='sub'>제목부분</span>
-			<span class='name'>작성자부분</span>
-			<span class='date'>작성일(자동완성됨)</span>
-			<span class='appr'>결재자</span>
-		</div>
-		<div class='item' onclick="adGoUrl('/stuffApproval')">
-			<span class='no'>2</span>
-			<span class='sub'>제목부분2</span>
-			<span class='name'>작성자부분2</span>
-			<span class='date'>작성일(자동완성됨)2</span>
-			<span class='appr'>결재자2</span>
-		</div>
+		<div class='items'>
 		<c:set var='no' value='${page.startNo }'/>
 		<c:forEach var='vo' items="${list }">
 			<div class='item' onclick="view('${vo.mid}')">

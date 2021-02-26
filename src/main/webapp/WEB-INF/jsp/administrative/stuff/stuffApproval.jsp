@@ -43,7 +43,7 @@ text-align:right;
 			<td colspan="10"><textarea id='content' class='hiddenbox' readonly disabled></textarea></td>
 		</tr>
 		<tr>
-			<td>예상비용</td>
+			<td>예상<br/>비용</td>
 			<td colspan="10"><textarea id='contentsmall' class='hiddenbox' readonly disabled></textarea></td>
 		</tr>
 		<tr>
