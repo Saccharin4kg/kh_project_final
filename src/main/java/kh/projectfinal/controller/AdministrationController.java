@@ -144,4 +144,27 @@ public class AdministrationController {
 		return mv;
 	}
 
+	@RequestMapping(value = "/stuffApproval", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView stuffApproval() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("administrative/stuff/stuffApproval");
+		return mv;
+	}
+
+	@RequestMapping(value = "/attendanceApproval", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView attendanceApproval() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("administrative/attendance/attendanceApproval");
+		return mv;
+	}
+
+	@RequestMapping(value = "/draftApproval", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView draftApproval() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("administrative/draft/draftApproval");
+		return mv;
+	}
 }

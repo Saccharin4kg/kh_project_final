@@ -24,6 +24,27 @@
 		<span class='type'>종류</span>
 	</div>
 	<div class='items'>
+		<div class='item' onclick="adGoUrl('/attendanceApproval')">
+			<span class='no'>1</span>
+			<span class='sub'>근태결재 임시</span>
+			<span class='date'>작성일</span>
+			<span class='appr'>결재자</span>
+			<span class='type'>근태</span>
+		</div>
+		<div class='item' onclick="adGoUrl('/stuffApproval')">
+			<span class='no'>2</span>
+			<span class='sub'>품의결재 임시</span>
+			<span class='date'>작성일</span>
+			<span class='appr'>결재자</span>
+			<span class='type'>품의</span>
+		</div>
+		<div class='item' onclick="adGoUrl('/draftApproval')">
+			<span class='no'>3</span>
+			<span class='sub'>기안결재 임시</span>
+			<span class='date'>작성일</span>
+			<span class='appr'>결재자</span>
+			<span class='type'>기안</span>
+		</div>
 		<c:set var='no' value='${page.startNo }'/>
 		<c:forEach var='vo' items="${list }">
 			<div class='item' onclick="view('${vo.mid}')">

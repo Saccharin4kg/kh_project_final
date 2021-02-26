@@ -41,7 +41,6 @@
 	background-color: #555;
 	padding: 4px 0;
 	color: #fff;
-	text-align: center;
 }
 
 #approval span {
@@ -53,23 +52,23 @@
 }
 
 #approval .sub {
-	width: 100px;
+	width: 270px;
 }
 
 #approval .name {
-	width: 120px;
+	width: 180px;
 }
 
 #approval .date {
-	width: 110px;
+	width: 240px;
 }
 
 #approval .appr {
-	width: 200px;
+	width: 120px;
 }
 
 #approval .type {
-	width: 200px;
+	width: 120px;
 }
 
 #approval .items>div {
