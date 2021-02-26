@@ -9,7 +9,6 @@
 </head>
 <body>
 <div id="WsMain">
-<div>
 <form name="Ss" method="post">
 <div id="table-scroll" class="table-scroll">
   <div class="table-wrap">
@@ -72,11 +71,9 @@
                 </div>
                 </div>
                <div class='btns'>
-			<input type='button' value='수정' id='btnModify' />
-			<input type='button' value='삭제' id='btnDelete' />
+			<input type='button' value='수정' id='btnUpdate' />
 		</div>
       </form>
       </div>
-</div>
 </body>
 </html>

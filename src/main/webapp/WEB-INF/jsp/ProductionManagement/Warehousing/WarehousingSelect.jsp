@@ -76,7 +76,7 @@
                 </div>
                <div class='btns'>
                <input type='button' value='등록' id='btnInsert' />
-			<input type='button' value='수정' id='btnModify' />
+			<input type='button' value='수정' id='btnUpdate' />
 			<input type='button' value='삭제' id='btnDelete' />
 		</div>
       </form>
