@@ -5,27 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel='stylesheet' type='text/css' href='css/Production/WarehousingInsert.css' />
+<link rel='stylesheet' type='text/css' href='css/Production/Release.css' />
 </head>
 <body>
 <div id="WsMain">
-<form name="Ws" class='Insert' method="post">
+<form name="Ss" method="post">
 <label>제품명</label>
 <input type='text' name='subject' maxLength='200'/><br>
 
 <label>단위</label>
 <input type='text' name='unit' /><br>
 
-<label>총 가격</label>
-<input type='text' name='price'/><br>
-
-<label>거래처</label>
-<input type='text'name='company'/><br>
-
+<label>재고량</label>
+<input type='text' name='Stocknumber'/><br>
+ 
 <div class='btns'>
-	<input type='button' value='저장' id='btnSave' />
-	<input type='button' value='취소' id='btnSelect' />
-</div>
+			<input type='button' value='저장' id='btnSave' />
+			<input type='button' value='취소' id='btnSelect' />
+		</div>
 </form>
 </div>
 </body>

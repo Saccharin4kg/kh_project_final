@@ -260,10 +260,11 @@ p.center-date {
 	vertical-align:top;
 }
 .btns{
-	margin-left:800px;
-	margin-top:500px;
+	height:50px;
+	width:950px;
 	position: absolute;
 	text-align: right;
+	margin-top: 500px;
 }
 .btns input[type="button" ] {
  height: 35px;

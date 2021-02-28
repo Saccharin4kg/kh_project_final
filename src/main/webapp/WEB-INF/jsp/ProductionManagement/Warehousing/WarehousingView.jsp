@@ -23,7 +23,7 @@
 <input type='text'name='company'/><br>
 
 <div class='btns'>
-			<input type='button' value='저장' id='btnSave' />
+			<input type='button' value='저장' id='btnSelect' />
 			<input type='button' value='취소' id='btnUpdate' />
 		</div>
 </form>

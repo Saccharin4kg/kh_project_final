@@ -67,7 +67,7 @@
 		</tr>
 		<tr>
 			<td>사유</td>
-			<td colspan="10"><textarea id='content'></textarea></td>
+			<td colspan="10"><textarea id='reason'></textarea></td>
 		</tr>
 		<tr>
 			<td colspan="11" id='end'>사유와 같이 근태계를 제출하오니 재가하여 주시기 바랍니다.</td>

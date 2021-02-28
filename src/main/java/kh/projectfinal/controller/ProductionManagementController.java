@@ -1,16 +1,30 @@
 package kh.projectfinal.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import kh.projectfinal.production.ProductionManagementDao;
+import kh.projectfinal.production.ProductionVo;
+
 @RestController
 public class ProductionManagementController {
 
+	@Autowired
+	ProductionManagementDao dao;
+	
+	
+	
+	
 	@RequestMapping(value = "/WarehousingSelect", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView WarehousingSelect() {
 		ModelAndView mv = new ModelAndView();
+		List<ProductionVo> list = dao.selectProductionVo();
+		mv.addObject("list", list);
 		mv.setViewName("ProductionManagement/Warehousing/WarehousingSelect");
 		return mv;
 	}
@@ -93,12 +107,12 @@ public class ProductionManagementController {
 		mv.setViewName("ProductionManagement/Stock/StockUpdate");
 		return mv;
 	}
-	
+	 
 	@RequestMapping(value = "/StockView", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView StockView() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("ProductionManagement/Stock/StockView");
 		return mv;
 	
-	}
+	}	
 }

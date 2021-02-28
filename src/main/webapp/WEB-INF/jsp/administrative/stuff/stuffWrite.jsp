@@ -36,7 +36,7 @@
 			<td colspan="10"><textarea id='content'></textarea></td>
 		</tr>
 		<tr>
-			<td>예상<br/>비용</td>
+			<td>예상비용</td>
 			<td colspan="10"><textarea id='contentsmall'></textarea></td>
 		</tr>
 		<tr>

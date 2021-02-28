@@ -42,11 +42,11 @@
         </tr>
       </tbody>
     </table>
-    <div class='btns'>
-    	<input type='button' value='삭제' id='btnDelect' />
-  </div>
   </div>
 </div>
+    <div class='btns'>
+    	<input type='button' value='확인' id='btnSelect' />
+  </div>
 </form>
 </div>
 </body>
