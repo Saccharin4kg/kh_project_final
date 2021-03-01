@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-#ProductionManagementMain>#PmMenu .Rs{
+#ProductionManagementMain>#PmMenu .Ws{
 	background-color: white;
 }
 
-#ProductionManagementMain>#PmMenu .Ss{
+#ProductionManagementMain>#PmMenu .Rs{
 	background-color: white;
 }
 .table-scroll {
@@ -64,7 +64,7 @@ input[type="text"]{
 	width:950px;
 	position: absolute;
 	text-align: right;
-	margin-top: 160px;
+	margin-top: 180px;
 }
 .btns input[type="button" ] {
  height: 35px;

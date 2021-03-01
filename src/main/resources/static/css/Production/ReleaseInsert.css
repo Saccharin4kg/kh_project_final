@@ -1,6 +1,5 @@
 @charset "UTF-8";
-
-#ProductionManagementMain>#PmMenu .Rs{
+#ProductionManagementMain>#PmMenu .Ws{
 	background-color: white;
 }
 
@@ -47,7 +46,7 @@
 }
 .Insert{
 	text-align: center;	
-	line-height: 65px;
+	line-height: 45px;
 	margin-top: 50px;
 }
 
@@ -58,7 +57,7 @@ label{
 input[type="text"]{
 	width: 500px;
 }
-
+ 
 .btns{
 	height:50px;
 	width:950px;
