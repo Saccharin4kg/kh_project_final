@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' type='text/css' href='css/administration/administrationshow.css' />
+<script src='js/administration.js'></script>
 </head>
 <body>
 <div id='approval'>
@@ -18,34 +20,19 @@
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>
+		<span class='name'>서류번호</span>
 		<span class='sub'>제목</span>
-		<span class='name'>작성자</span>
 		<span class='date'>작성일</span>
 		<span class='appr'>결재자</span>
 	</div>
 	<div class='items'>
-		<div class='item' onclick="adGoUrl('/stuffApproval')">
-			<span class='no'>1</span>
-			<span class='sub'>제목부분</span>
-			<span class='name'>작성자부분</span>
-			<span class='date'>작성일(자동완성됨)</span>
-			<span class='appr'>결재자</span>
-		</div>
-		<div class='item' onclick="adGoUrl('/stuffApproval')">
-			<span class='no'>2</span>
-			<span class='sub'>제목부분2</span>
-			<span class='name'>작성자부분2</span>
-			<span class='date'>작성일(자동완성됨)2</span>
-			<span class='appr'>결재자2</span>
-		</div>
 		<c:set var='no' value='${page.startNo }'/>
 		<c:forEach var='vo' items="${list }">
-			<div class='item' onclick="view('${vo.mid}')">
+			<div class='item' onclick="view('${vo.paper_no}')">
 				<span class='no'>${no }</span>
-				<span class='mid'>${vo.mid }</span>
-				<span class='name'>${vo.name }</span>
-				<span class='email'>${vo.email }</span>
-				<span class='mdate'>${vo.mdate }</span>
+				<span class='name'>${vo.paper_no }</span>
+				<span class='sub'>${vo.title }</span>
+				<span class='date'>${vo.date_write }</span>
 			</div>
 			<c:set var='no' value = '${no=no+1 }'/>
 		</c:forEach>
@@ -69,5 +56,6 @@
 		</c:if>	
 	</div>
 </div>
+<script></script>
 </body>
 </html>

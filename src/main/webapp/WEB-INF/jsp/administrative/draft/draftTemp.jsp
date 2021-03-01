@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' type='text/css' href='css/administration/administrationshow.css' />
+<script src='js/administration.js'></script>
 </head>
 <body>
 <div id='approval'>
-	<h3>기안임시보관</h3>
+	<h3>품의임시보관</h3>
 	<form name='frm_approval' method='post' id='frm_approval'>
 			<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
 			<input type='button' value='검색' id='btnFind'/>
@@ -18,20 +20,19 @@
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>
+		<span class='name'>서류번호</span>
 		<span class='sub'>제목</span>
-		<span class='name'>작성자</span>
 		<span class='date'>작성일</span>
 		<span class='appr'>결재자</span>
 	</div>
 	<div class='items'>
 		<c:set var='no' value='${page.startNo }'/>
 		<c:forEach var='vo' items="${list }">
-			<div class='item' onclick="view('${vo.mid}')">
+			<div class='item' onclick="view('${vo.paper_no}')">
 				<span class='no'>${no }</span>
-				<span class='mid'>${vo.mid }</span>
-				<span class='name'>${vo.name }</span>
-				<span class='email'>${vo.email }</span>
-				<span class='mdate'>${vo.mdate }</span>
+				<span class='name'>${vo.paper_no }</span>
+				<span class='sub'>${vo.title }</span>
+				<span class='date'>${vo.date_write }</span>
 			</div>
 			<c:set var='no' value = '${no=no+1 }'/>
 		</c:forEach>
@@ -55,5 +56,6 @@
 		</c:if>	
 	</div>
 </div>
+<script></script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="kh.projectfinal.administrative.AdministrativeMapper">
+
+	<select id="selectDraftVo"
+		parameterType="kh.projectfinal.administrative.Page"
+		resultType="kh.projectfinal.administrative.DraftVo">
+		select paper_no, title, date_write from draft_info
+		where
+		(paper_no like '%${findStr}%'
+		or title like '%${findStr}%'
+		or date_write
+		like '%${findStr}%') and state = ${state}
+		order by paper_no desc
+	</select>
+
+	<select id="selectStuffVo"
+		parameterType="kh.projectfinal.administrative.Page"
+		resultType="kh.projectfinal.administrative.StuffVo">
+		select paper_no, title, date_write from stuff_info
+		where
+		(paper_no like '%${findStr}%'
+		or title like '%${findStr}%'
+		or date_write
+		like '%${findStr}%') and state = ${state}
+		order by paper_no desc
+	</select>
+
+	<select id="selectAttendanceVo"
+		parameterType="kh.projectfinal.administrative.Page"
+		resultType="kh.projectfinal.administrative.AttendanceVo">
+		select paper_no, title, date_write from attendance_info
+		where
+		(paper_no like '%${findStr}%'
+		or title like '%${findStr}%'
+		or
+		date_write
+		like '%${findStr}%') and state = ${state}
+		order by paper_no
+		desc
+	</select>
+
+	<select id="myApprivalVo"
+		parameterType="kh.projectfinal.administrative.Page"
+		resultType="kh.projectfinal.administrative.ApprivalVo">
+		SELECT paper_no,title,date_write FROM draft_info WHERE
+		emp_no = ${empNo}
+		UNION
+		SELECT paper_no,title,date_write FROM stuff_info WHERE emp_no = ${empNo}
+		UNION
+		SELECT paper_no,title,date_write FROM attendance_info WHERE emp_no =
+		${empNo}
+		order by paper_no desc
+	</select>
+
+	<select id="waitApprovalVo"
+		parameterType="kh.projectfinal.administrative.Page"
+		resultType="kh.projectfinal.administrative.ApprivalVo">
+		SELECT paper_no,title,date_write FROM draft_info WHERE (gm
+		= ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null
+		AND state = 1) OR (ceo = ${empNo} AND state = 1)
+		UNION
+		SELECT paper_no,title,date_write FROM stuff_info WHERE (gm = ${empNo} AND dm IS
+		null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR
+		(ceo = ${empNo} AND state = 1)
+		UNION
+		SELECT paper_no,title,date_write FROM attendance_info WHERE (gm = ${empNo} AND
+		dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state =
+		1) OR (ceo = ${empNo} AND state = 1)
+		order by paper_no desc
+	</select>
+</mapper>
