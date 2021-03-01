@@ -13,4 +13,10 @@ public interface AdministrativeMapper {
 	public List<StuffVo> selectStuffVo(Page page);
 	
 	public List<AttendanceVo> selectAttendanceVo(Page page);
+	
+	public int getTotListSizeDraft(Page page);
+
+	public int getTotListSizeStuff(Page page);
+
+	public int getTotListSizeAttendance(Page page);
 }
