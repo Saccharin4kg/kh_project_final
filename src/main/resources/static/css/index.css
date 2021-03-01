@@ -4,7 +4,33 @@ body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	
 }
+
+#index{
+	margin:0 auto;
+	width: 1200px;
+	
+}
+
+#userInfo{
+	text-align:right;
+	height:45px;
+	line-height: 45px;
+	color : #888;
+}
+
+#userInfo .approv{
+	color : blue;
+	
+}
+
+#userInfo .approv_cnt{
+	color:red
+	
+}
+
+
 
 #header {
 	
@@ -22,7 +48,7 @@ body{
 	bottom: 0;
 	right: 20px;
 }
- 
+
 #header>#menu>ul>li {
 	height:70px;
 	width: 230px;
@@ -31,9 +57,7 @@ body{
 	list-style: none;
 	float: left;
 	border: 2px solid black;
-	margin-left: 10px;
-	font-size: 20px;
-	padding-top: 20px;
+	margin-left: 10px
 }
 
 #main{
@@ -46,3 +70,65 @@ body{
 	width: 1200px;
 	background-color: gray;
 }
+
+/* login -------------------------- */
+#login{
+	width: 100%;
+	margin: 200px auto;
+	
+}
+#login form{
+	text-align: center;
+	font-size:16pt;
+	line-height:33px;
+}
+
+#login label{
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+	
+}
+#login input{
+	font-size:16pt;
+}
+
+#login #btnLogin{
+	width:130px;
+	height:50px;
+}
+
+#login #info{
+	font-size:11pt;
+	color:#888;
+	margin-top:30px;
+}
+
+
+.afterLogin{
+	width:100%;
+	color:#f00;
+	text-align: center;
+	font-size:30px;
+	margin-top:300px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
