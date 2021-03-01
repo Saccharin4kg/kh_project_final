@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+#ProductionManagementMain>#PmMenu .Rs{
+	background-color: white;
+}
+
+#ProductionManagementMain>#PmMenu .Ss{
+	background-color: white;
+}
 .table-scroll {
 	position:relative;
 	max-width:600px;

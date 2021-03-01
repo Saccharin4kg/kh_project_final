@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#administrationMain {
+	height: 800px;
+	width: 1200px;
+}
+
+#administrationMain>#adMenu {
+	float: left;
+	width: 200px;
+}
+
+#administrationMain>#adMenu ul {
+	list-style: none;
+}
+
+#administrationMain>#adShow {
+	float: left;
+	height: 500px;
+	width: 1000px;
+}

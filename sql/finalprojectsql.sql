@@ -320,14 +320,3 @@ SELECT paper_no,title,date_write FROM attendance_info WHERE state = 3;
 SELECT paper_no,title,date_write FROM attendance_info WHERE state = 4;
 
 commit;
-
-select paper_no, title, date_write from attendance_info
-		where
-		(paper_no like '%%'
-		or title like '%%'
-		or date_write
-		like '%%') and state = 2
-		order by paper_no desc;
-    
-ALTER system SET processes=500 scope=spfile;
-commit;
