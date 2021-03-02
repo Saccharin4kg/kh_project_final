@@ -20,7 +20,6 @@ body {
 	color : #888;
 }
 
-<<<<<<< HEAD
 #mainlink {
 	width: 300px;
 	height: 100px;
@@ -28,9 +27,6 @@ body {
 	padding-top: 8px;
 /* 	border: 2px solid black; */
 	cursor: pointer;
-=======
-#userInfo .approv{
-	color : blue;
 	
 }
 
@@ -43,7 +39,6 @@ body {
 
 #header {
 	
->>>>>>> origin/temp2
 }
 
 #header>#menu {
@@ -66,7 +61,6 @@ body {
 	text-align: center;
 	list-style: none;
 	float: left;
-<<<<<<< HEAD
 /* 	border: 2px solid black; */
 	margin-left: 10px;
 	font-size: 20px;
@@ -93,10 +87,6 @@ body {
 	color: gray;
 	text-decoration: none;
 	cursor: pointer;
-=======
-	border: 2px solid black;
-	margin-left: 10px
->>>>>>> origin/temp2
 }
 
 #main {
@@ -107,12 +97,8 @@ body {
 #footer {
 	height: 150px;
 	width: 1200px;
-<<<<<<< HEAD
 	background-color: #8FBCDB;
 	background-image: url('/img/footer.png');
-}
-=======
-	background-color: gray;
 }
 
 /* login -------------------------- */
@@ -158,22 +144,3 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> origin/temp2
