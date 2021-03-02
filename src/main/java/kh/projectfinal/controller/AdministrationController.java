@@ -39,8 +39,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/stuffTemp", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView stuffTemp(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<StuffVo> list = dao.selectStuffVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/stuff/stuffTemp");
 		return mv;
@@ -49,8 +51,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/stuffComplete", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView stuffComplete(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<StuffVo> list = dao.selectStuffVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/stuff/stuffComplete");
 		return mv;
@@ -59,8 +63,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/stuffHold", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView stuffHold(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<StuffVo> list = dao.selectStuffVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/stuff/stuffHold");
 		return mv;
@@ -69,8 +75,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/stuffRejection", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView stuffRejection(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<StuffVo> list = dao.selectStuffVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/stuff/stuffRejection");
 		return mv;
@@ -79,8 +87,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/attendanceTemp", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView attendanceTemp(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<AttendanceVo> list = dao.selectAttendanceVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/attendance/attendanceTemp");
 		return mv;
@@ -89,8 +99,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/attendanceComplete", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView attendanceComplete(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<AttendanceVo> list = dao.selectAttendanceVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/attendance/attendanceComplete");
 		return mv;
@@ -99,8 +111,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/attendanceHold", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView attendanceHold(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<AttendanceVo> list = dao.selectAttendanceVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/attendance/attendanceHold");
 		return mv;
@@ -109,8 +123,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/attendanceRejection", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView attendanceRejection(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<AttendanceVo> list = dao.selectAttendanceVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/attendance/attendanceRejection");
 		return mv;
@@ -119,8 +135,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/draftTemp", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView draftTemp(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<DraftVo> list = dao.selectDraftVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/draft/draftTemp");
 		return mv;
@@ -129,8 +147,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/draftComplete", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView draftComplete(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<DraftVo> list = dao.selectDraftVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/draft/draftComplete");
 		return mv;
@@ -139,8 +159,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/draftHold", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView draftHold(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<DraftVo> list = dao.selectDraftVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/draft/draftHold");
 		return mv;
@@ -149,8 +171,10 @@ public class AdministrationController {
 	@RequestMapping(value = "/draftRejection", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView draftRejection(Page page) {
 		ModelAndView mv = new ModelAndView();
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
 		List<DraftVo> list = dao.selectDraftVo(page);
-
 		mv.addObject("list", list);
 		mv.setViewName("administrative/draft/draftRejection");
 		return mv;

@@ -23,7 +23,7 @@ public class ProductionManagementController {
 	@RequestMapping(value = "/WarehousingSelect", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView WarehousingSelect() {
 		ModelAndView mv = new ModelAndView();
-		List<ProductionVo> list = dao.selectProductionVo();
+		List<ProductionVo> list = dao.warehousingSelectVo();
 		mv.addObject("list", list);
 		mv.setViewName("ProductionManagement/Warehousing/WarehousingSelect");
 		return mv;
@@ -50,17 +50,18 @@ public class ProductionManagementController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/WarehousingDelect", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/WarehousingDelete", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView WarehousingDelect() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("ProductionManagement/Warehousing/WarehousingDelect");
+		mv.setViewName("ProductionManagement/Warehousing/WarehousingDelete");
 		return mv;
 	}
 	
 	@RequestMapping(value = "/ReleaseSelect", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView ReleaseSelect() {
 		ModelAndView mv = new ModelAndView();
-		
+		List<ProductionVo> list = dao.releaseSelectVo();
+		mv.addObject("list", list);
 		mv.setViewName("ProductionManagement/Release/ReleaseSelect");
 		return mv;
 	}
@@ -86,18 +87,26 @@ public class ProductionManagementController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/ReleaseDelect", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/ReleaseDelete", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView ReleaseDelect() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("ProductionManagement/Release/ReleaseDelect");
+		mv.setViewName("ProductionManagement/Release/ReleaseDelete");
 		return mv;
 	}
 	
 	@RequestMapping(value = "/StockSelect", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView StockSelect() {
 		ModelAndView mv = new ModelAndView();
-		
+		List<ProductionVo> list = dao.stockSelectVo();
+		mv.addObject("list", list);
 		mv.setViewName("ProductionManagement/Stock/StockSelect");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/StockInsert", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView StockInsert() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("ProductionManagement/Stock/StockInsert");
 		return mv;
 	}
 	

@@ -8,35 +8,39 @@ public class Page {
 	int startNo;
 	int endNo;
 	int nowPage;
-	int listSize=20;
-	int blockSize=5;
+	int listSize = 15;
+	int blockSize = 5;
+	String findStr;
 	int state;
-	
-	public int getState() {
-		return state;
-	}
-	public void setState(int state) {
-		this.state = state;
+
+	public Page() {
 	}
 
-	String findStr;
-	
-	public Page() {}
 	public Page(int tot, int now) {
 		this.totListSize = tot;
 		this.nowPage = now;
 		pageCompute();
 	}
-	
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
 	public void pageCompute() {
-		totPage = (int)(Math.ceil(totListSize/(double)listSize));
+		totPage = (int) (Math.ceil(totListSize / (double) listSize));
 		endNo = nowPage * listSize;
-		startNo = endNo -listSize + 1;
-		if(endNo>totListSize) endNo = totListSize;
-		
-		endPage = (int)(Math.ceil(nowPage/(double)blockSize))*blockSize;
-		startPage = endPage-blockSize+1;
-		if(endPage>totPage) endPage = totPage;
+		startNo = endNo - listSize + 1;
+		if (endNo > totListSize)
+			endNo = totListSize;
+
+		endPage = (int) (Math.ceil(nowPage / (double) blockSize)) * blockSize;
+		startPage = endPage - blockSize + 1;
+		if (endPage > totPage)
+			endPage = totPage;
 	}
 
 	public int getTotListSize() {
@@ -118,6 +122,5 @@ public class Page {
 	public void setFindStr(String findStr) {
 		this.findStr = findStr;
 	}
-	
-	
+
 }

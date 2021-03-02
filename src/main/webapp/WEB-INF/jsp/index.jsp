@@ -19,11 +19,11 @@
 		<div id='userInfo'></div>
 		
 		<div id='menu'>
+		<div id='mainlink' onclick="location.href=''"><h1>KH ERP프로그램</h1></div>
 			<ul>
-				<li><a href=''>KH ERP프로그램</a></li>
-				<li><a href='#' onclick="goUrl('/ProductionManagement')">생산 관리</a></li>
-				<li><a href='#' onclick="goUrl('/administrationMain')">행정 관리</a></li>
-				<li><a href=''>인사 관리</a></li>
+				<li><a href='#' onclick="goUrl('/ProductionManagement')"><h2>생산 관리</h2></a></li>
+				<li><a href='#' onclick="goUrl('/administrationMain')"><h2>행정 관리</h2></a></li>
+				<li><a href=''><h2>인사 관리</h2></a></li>
 			</ul>
 		</div>
 	</header>

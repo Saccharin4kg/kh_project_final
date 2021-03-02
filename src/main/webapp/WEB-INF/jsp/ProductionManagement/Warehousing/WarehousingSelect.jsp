@@ -17,10 +17,10 @@
     <table class="main-table">
       <thead>
         <tr>
-          <th class="fixed-side" scope="col">제품 명(제품 코드)</th>
+          <th class="fixed-side" scope="col">제품 명</th>
           <th scope="col">단위</th>
           <th scope="col">총 가격</th>
-          <th scope="col">거래처(회사 코드)</th>
+          <th scope="col">거래처</th>
           <th scope="col">입고시간</th>
         </tr>
       </thead>
@@ -61,8 +61,7 @@
                             <p class="os-percentage">39<sup>%</sup></p>
                             <p class="linux os scnd-font-color">${vo.product_name }</p>
                             <p class="os-percentage">9<sup>%</sup></p>
-                            <p class="win os scnd-font-color">${vo.product_name }</p>
-                            <p class="os-percentage">31<sup>%</sup></p>
+                            </li>
                         </c:forEach>
                     </ul>
                 </div>
@@ -70,7 +69,7 @@
                <div class='btns'>
                <input type='button' value='등록' id='btnInsert' onclick="PmgoUrl('/WarehousingInsert')"/>
 			<input type='button' value='수정' id='btnUpdate' onclick="PmgoUrl('/WarehousingUpdate')"/>
-			<input type='button' value='삭제' id='btnDelete' onclick="PmgoUrl('/WarehousingDelect')"/>
+			<input type='button' value='삭제' id='btnDelete' onclick="PmgoUrl('/WarehousingDelete')"/>
 		</div>
       </form>
 </div>

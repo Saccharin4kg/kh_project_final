@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface ProductionMapper {
 	
-	public List<ProductionVo> selectProductionVo();
-	
-	
+	public List<ProductionVo> warehousingSelectVo();
+	public List<ProductionVo> releaseSelectVo();
+	public List<ProductionVo> stockSelectVo();
 }

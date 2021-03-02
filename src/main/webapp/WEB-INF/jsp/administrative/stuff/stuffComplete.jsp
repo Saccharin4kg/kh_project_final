@@ -13,10 +13,12 @@
 <div id='approval'>
 	<h3>품의결재완료</h3>
 	<form name='frm_approval' method='post' id='frm_approval'>
-			<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
-			<input type='button' value='검색' id='btnFind'/>
-			<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
-			<input type='hidden' name='mid' />
+		<input hidden="hidden" />
+		<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
+		<input type='button' value='검색' id='btnFind'/>
+		<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
+		<input type='hidden' name='mid' />
+		<input type='hidden' name='url' value='/stuffComplete?&state=2'/>
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>
@@ -56,6 +58,6 @@
 		</c:if>	
 	</div>
 </div>
-<script></script>
+<script>app()</script>
 </body>
 </html>

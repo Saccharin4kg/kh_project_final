@@ -13,8 +13,13 @@ body{
 #header>#menu {
 	height: 150px;
 	width: 1200px;
+<<<<<<< HEAD
 	background-color: gray;
 	position: relative;
+=======
+	position: relative;
+	background-image: url('img/title.png');
+>>>>>>> temp
 }
 
 #header>#menu>ul {

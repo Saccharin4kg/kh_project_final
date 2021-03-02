@@ -13,19 +13,31 @@ public class ProductionManagementDao {
 	@Autowired
 	ProductionMapper mapper;
 
-	public List<ProductionVo>selectProductionVo()
-	
-	{
+	public List<ProductionVo>warehousingSelectVo(){
 		List<ProductionVo> list = new ArrayList<ProductionVo>();
 		try {
-			list=mapper.selectProductionVo();
-		}catch(Exception e)
-		{
+			list = mapper.warehousingSelectVo();
+		}catch(Exception e){
 			e.printStackTrace();
 		}	
 			return list;
-		
 	}
-	
-	
+	public List<ProductionVo>releaseSelectVo(){
+		List<ProductionVo> list = new ArrayList<ProductionVo>();
+		try {
+			list = mapper.releaseSelectVo();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+			return list;
+	}
+	public List<ProductionVo>stockSelectVo() {
+		List<ProductionVo> list = new ArrayList<ProductionVo>();
+		try {
+			list = mapper.stockSelectVo();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}	
+			return list;
+	}
 }

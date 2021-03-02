@@ -15,9 +15,17 @@ public class ProductionVo {
 	private int refurbish_number;
 	private int disuse_number;
 	private int release_number;
-    private int release_price;
+    private long release_price;
     private int stock_number;
+    private long stock_price;
     private Date time;
+
+    public long getStock_price() {
+		return stock_price;
+	}
+	public void setStock_price(long stock_price) {
+		this.stock_price = stock_price;
+	}
     
 	public int getCompany_index() {
 		return company_index;
@@ -85,10 +93,10 @@ public class ProductionVo {
 	public void setRelease_number(int release_number) {
 		this.release_number = release_number;
 	}
-	public int getRelease_price() {
+	public long getRelease_price() {
 		return release_price;
 	}
-	public void setRelease_price(int release_price) {
+	public void setRelease_price(long release_price) {
 		this.release_price = release_price;
 	}
 	public int getStock_number() {
