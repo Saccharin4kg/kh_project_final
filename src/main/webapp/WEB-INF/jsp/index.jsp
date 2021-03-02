@@ -1,3 +1,4 @@
+<%@page import="kh.projectfinal.mapper.EmpInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,10 +11,13 @@
 	crossorigin="anonymous"></script>
 <link rel='stylesheet' type='text/css' href='css/index.css' />
 <script src='js/index.js'></script>
+
 </head>
 <body>
+<div id='index'>
 	<header id='header'>
 		<div id='userInfo'></div>
+		
 		<div id='menu'>
 		<div id='mainlink' onclick="location.href=''"><h1>KH ERP프로그램</h1></div>
 			<ul>
@@ -23,7 +27,9 @@
 			</ul>
 		</div>
 	</header>
-	<section id='main'></section>
+	<section id='main'>
+		<jsp:include page="member/login.jsp"/>
+	</section>
 	<footer id='footer'>
 		<ul class='footerlist'>
 			<li>KH ERP회사</li>
@@ -31,5 +37,6 @@
 			<li>서울시 강남로 솔매길 102</li>
 		</ul>
 	</footer>
+</div>
 </body>
 </html>

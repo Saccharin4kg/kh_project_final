@@ -4,8 +4,23 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	
 }
 
+#index{
+	margin:0 auto;
+	width: 1200px;
+	
+}
+
+#userInfo{
+	text-align:right;
+	height:45px;
+	line-height: 45px;
+	color : #888;
+}
+
+<<<<<<< HEAD
 #mainlink {
 	width: 300px;
 	height: 100px;
@@ -13,6 +28,22 @@ body {
 	padding-top: 8px;
 /* 	border: 2px solid black; */
 	cursor: pointer;
+=======
+#userInfo .approv{
+	color : blue;
+	
+}
+
+#userInfo .approv_cnt{
+	color:red
+	
+}
+
+
+
+#header {
+	
+>>>>>>> origin/temp2
 }
 
 #header>#menu {
@@ -35,6 +66,7 @@ body {
 	text-align: center;
 	list-style: none;
 	float: left;
+<<<<<<< HEAD
 /* 	border: 2px solid black; */
 	margin-left: 10px;
 	font-size: 20px;
@@ -61,6 +93,10 @@ body {
 	color: gray;
 	text-decoration: none;
 	cursor: pointer;
+=======
+	border: 2px solid black;
+	margin-left: 10px
+>>>>>>> origin/temp2
 }
 
 #main {
@@ -71,6 +107,73 @@ body {
 #footer {
 	height: 150px;
 	width: 1200px;
+<<<<<<< HEAD
 	background-color: #8FBCDB;
 	background-image: url('/img/footer.png');
 }
+=======
+	background-color: gray;
+}
+
+/* login -------------------------- */
+#login{
+	width: 100%;
+	margin: 200px auto;
+	
+}
+#login form{
+	text-align: center;
+	font-size:16pt;
+	line-height:33px;
+}
+
+#login label{
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+	
+}
+#login input{
+	font-size:16pt;
+}
+
+#login #btnLogin{
+	width:130px;
+	height:50px;
+}
+
+#login #info{
+	font-size:11pt;
+	color:#888;
+	margin-top:30px;
+}
+
+
+.afterLogin{
+	width:100%;
+	color:#f00;
+	text-align: center;
+	font-size:30px;
+	margin-top:300px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> origin/temp2
