@@ -14,11 +14,20 @@ body{
 	height: 150px;
 	width: 1200px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-color: gray;
 	position: relative;
 =======
 	position: relative;
 	background-image: url('img/title.png');
+>>>>>>> temp
+=======
+	position: relative;
+	background-image: url('img/title.png');
+=======
+	background-color: gray;
+	position: relative;
+>>>>>>> origin/temp2
 >>>>>>> temp
 }
 
