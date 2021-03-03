@@ -1,14 +1,28 @@
+<%@page import="kh.projectfinal.mapper.EmpInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%
+	EmpInfo info = (EmpInfo)session.getAttribute("emp");
+	int classNo = info.getClassNo();
+	String className = null;
+	if(classNo == 1) { className = "사원"; } else
+	if(classNo == 2) { className = "과장"; } else
+	if(classNo == 3) { className = "부장"; } else
+	if(classNo == 4) { className = "사장"; }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' type='text/css' href='css/administration/approvalform.css' />
+<script src='js/administration.js'></script>
 </head>
 <body>
 <div id='approvalWrite'>
+<form name='frm_approval' method='post' id='frm_approval'>
 	<table id='approvalTable' border="1">
 		<tr>
 			<td colspan="11"><h3>근태결재서</h3></td>
@@ -18,13 +32,13 @@
 			<td colspan="2">부서</td>
 			<td colspan="2">성명</td>
 			<td colspan="2">직급</td>
-			<td colspan="4">입사일자</td>
+			<td colspan="4">사원번호</td>
 		</tr>
 		<tr>
-			<td colspan="2">　</td>
-			<td colspan="2"></td>
-			<td colspan="2"></td>
-			<td colspan="4"></td>
+			<td colspan="2"><%= info.getDepartNo() %></td>
+			<td colspan="2"><%= info.getEmpName() %></td>
+			<td colspan="2"><%= className %></td>
+			<td colspan="4"><%= info.getEmpNo() %></td>
 		</tr>
 		<tr>
 			<td rowspan="2">기간</td>
@@ -36,17 +50,15 @@
 			<td>월</td>
 			<td>일</td>
 			<td rowspan="2">까지</td>
-			<td>일간</td>
 			<td>구분</td>
 		</tr>
 		<tr>
-			<td><input type='text' class='date'/></td>
-			<td><input type='text' class='date'/></td>
-			<td><input type='text' class='date'/></td>
-			<td><input type='text' class='date'/></td>
-			<td><input type='text' class='date'/></td>
-			<td><input type='text' class='date'/></td>
-			<td><input type='text' class='date'/></td>
+			<td><input type='text' name='from_year' class='date'/></td>
+			<td><input type='text' name='from_month' class='date'/></td>
+			<td><input type='text' name='from_day' class='date'/></td>
+			<td><input type='text' name='to_year' class='date'/></td>
+			<td><input type='text' name='to_month' class='date'/></td>
+			<td><input type='text' name='to_day' class='date'/></td>
 			<td>
 				<select name="type">
 					<option value="">휴가</option>
@@ -63,11 +75,11 @@
 		</tr>
 		<tr>
 			<td>제목</td>
-			<td colspan="10"><input type='text' id='reasonTitle'/></td>
+			<td colspan="10"><input type='text' name='title' id='reasonTitle'/></td>
 		</tr>
 		<tr>
 			<td>사유</td>
-			<td colspan="10"><textarea id='reason'></textarea></td>
+			<td colspan="10"><textarea id='content' name='subject'></textarea></td>
 		</tr>
 		<tr>
 			<td colspan="11" id='end'>사유와 같이 근태계를 제출하오니 재가하여 주시기 바랍니다.</td>
@@ -86,9 +98,42 @@
 			<td class='stamp'></td>
 		</tr>
 	</table>
-	<input type='button' value='취소'/>
+	<input type='file' name='attach' multiple='multiple' id='fileUpload'/>
+	<input type='button' value='취소' onclick="goUrl('/administrationMain');location.href='#행정관리'"/>
+	<input type='button' value='작성중지'/>
 	<input type='button' value='임시보관'/>
-	<input type='button' value='확인'/>
+	<input type='button' id='btnSave' value='확인'/>
+	<input type='hidden' name='emp_no' value='<%= info.getEmpNo() %>'/>
+	
+	<c:set var="classNo" value="<%= info.getClassNo() %>"/>
+	<c:choose>
+    <c:when test="${classNo == 1}">
+	<input type='hidden' name='staff' value='<%= info.getEmpNo() %>'/>
+	<input type='hidden' name='gm' value='<%= info.getSuperNo() %>'/>
+	<input type='hidden' name='dm' disabled='disabled'/>
+	<input type='hidden' name='ceo' disabled='disabled'/>
+    </c:when>
+    <c:when test="${classNo == 2}">
+	<input type='hidden' name='staff' disabled='disabled'/>
+	<input type='hidden' name='gm' value='<%= info.getEmpNo() %>'/>
+	<input type='hidden' name='dm' value='<%= info.getSuperNo() %>'/>
+	<input type='hidden' name='ceo' disabled='disabled'/>
+    </c:when>
+    <c:when test="${classNo == 3}">
+	<input type='hidden' name='staff' disabled='disabled'/>
+	<input type='hidden' name='gm' disabled='disabled'/>
+	<input type='hidden' name='dm' value='<%= info.getEmpNo() %>'/>
+	<input type='hidden' name='ceo' value='<%= info.getSuperNo() %>'/>
+    </c:when>
+    <c:otherwise>
+	<input type='hidden' name='staff' disabled='disabled'/>
+	<input type='hidden' name='gm' disabled='disabled'/>
+	<input type='hidden' name='dm' disabled='disabled'/>
+	<input type='hidden' name='ceo' value=<%= info.getEmpNo() %>/>
+    </c:otherwise>
+	</c:choose>
+</form>
 </div>
+<script>app()</script>
 </body>
 </html>

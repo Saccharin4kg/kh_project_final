@@ -3,12 +3,14 @@ package kh.projectfinal.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import kh.projectfinal.administrative.AdministrationDao;
+import kh.projectfinal.administrative.ApprovalVo;
 import kh.projectfinal.administrative.AttendanceVo;
 import kh.projectfinal.administrative.DraftVo;
 import kh.projectfinal.administrative.Page;
@@ -23,7 +25,11 @@ public class AdministrationController {
 	@RequestMapping(value = "/myApproval", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView myApproval(Page page) {
 		ModelAndView mv = new ModelAndView();
-
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
+		List<ApprovalVo> list = dao.selectMyApprovalVo(page);
+		mv.addObject("list", list);
 		mv.setViewName("administrative/myApproval");
 		return mv;
 	}
@@ -31,7 +37,11 @@ public class AdministrationController {
 	@RequestMapping(value = "/waitApproval", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView waitApproval(Page page) {
 		ModelAndView mv = new ModelAndView();
-
+		if(page ==null || page.getNowPage()==0) {
+			page.setNowPage(1);
+		}
+		List<ApprovalVo> list = dao.selectWaitApprovalVo(page);
+		mv.addObject("list", list);
 		mv.setViewName("administrative/waitApproval");
 		return mv;
 	}
@@ -90,7 +100,7 @@ public class AdministrationController {
 		if(page ==null || page.getNowPage()==0) {
 			page.setNowPage(1);
 		}
-		List<AttendanceVo> list = dao.selectAttendanceVo(page);
+		List<AttendanceVo> list = dao.selectMyAttendanceVo(page);
 		mv.addObject("list", list);
 		mv.setViewName("administrative/attendance/attendanceTemp");
 		return mv;

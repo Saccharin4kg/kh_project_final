@@ -35,6 +35,25 @@ app = function() {
 			}
 		});
 	});
+
+
+	$('#btnSave').on('click', function() {
+		var frm = $('#frm_board')[0];
+		frm.enctype = 'multipart/form-data';
+		var data = new FormData(frm);
+
+		$.ajax({
+			url: '/administrationMain',
+			data: data,
+			dataType: 'html',
+			method: 'post',
+			processData: false,
+			contentType: false,
+			success: function(data) {
+				$('#adShow').html(data)
+			}
+		});
+	});
 }
 
 function goPage(page) {

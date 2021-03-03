@@ -1,6 +1,6 @@
 package kh.projectfinal.administrative;
 
-public class ApprivalVo {
+public class ApprovalVo {
 	int paper_no;
 	String title;
 	String date_write;
