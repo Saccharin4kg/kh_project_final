@@ -10,20 +10,24 @@
 	crossorigin="anonymous"></script>
 <link rel='stylesheet' type='text/css' href='css/index.css' />
 <script src='js/index.js'></script>
+
 </head>
 <body>
+<div id='index'>
 	<header id='header'>
 		<div id='userInfo'></div>
+		
 		<div id='menu'>
+		<div id='mainlink'><h1>KH ERP프로그램</h1></div>
 			<ul>
-				<li><a href=''>KH ERP프로그램</a></li>
-				<li><a href='#' onclick="goUrl('/ProductionManagement')">생산 관리</a></li>
-				<li><a href='#' onclick="goUrl('/administrationMain')">행정 관리</a></li>
-				<li><a href=''>인사 관리</a></li>
+				<li><a href='#' onclick="goUrl('/ProductionManagement')"><h2>생산 관리</h2></a></li>
+				<li><a href='#' onclick="goUrl('/administrationMain')"><h2>행정 관리</h2></a></li>
 			</ul>
 		</div>
 	</header>
-	<section id='main'></section>
+	<section id='main'>
+		<jsp:include page="member/login.jsp"/>
+	</section>
 	<footer id='footer'>
 		<ul class='footerlist'>
 			<li>KH ERP회사</li>
@@ -31,5 +35,6 @@
 			<li>서울시 강남로 솔매길 102</li>
 		</ul>
 	</footer>
+</div>
 </body>
 </html>

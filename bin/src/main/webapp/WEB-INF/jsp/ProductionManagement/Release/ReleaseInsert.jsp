@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel='stylesheet' type='text/css' href='css/Production/Release.css' />
+<link rel='stylesheet' type='text/css' href='css/Production/ReleaseInsert.css' />
 </head>
 <body>
 <div id="WsMain">
-<form name="Ws" method="post">
+<form name="Ws" class="Insert" method="post">
 <label>제품명</label>
 <input type='text' name='subject' maxLength='200'/><br>
 

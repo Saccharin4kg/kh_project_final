@@ -1,6 +1,10 @@
+<%@page import="kh.projectfinal.mapper.EmpInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%
+	EmpInfo info = (EmpInfo)session.getAttribute("emp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +17,12 @@
 <div id='approval'>
 	<h3>기안결재완료</h3>
 	<form name='frm_approval' method='post' id='frm_approval'>
-			<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
-			<input type='button' value='검색' id='btnFind'/>
-			<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
-			<input type='hidden' name='mid' />
+		<input hidden="hidden" />
+		<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
+		<input type='button' value='검색' id='btnFind'/>
+		<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
+		<input type='hidden' name='mid' />
+		<input type='hidden' name='url' value='/draftComplete?&state=2&empNo=<%= info.getEmpNo() %>'/>
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>
@@ -56,6 +62,6 @@
 		</c:if>	
 	</div>
 </div>
-<script>drf()</script>
+<script>app()</script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id='approval'>
-	<h3>품의임시보관</h3>
+	<h3>기안임시보관</h3>
 	<form name='frm_approval' method='post' id='frm_approval'>
 		<input hidden="hidden" />
 		<input type='text' name='findStr' class='findStr' value='${param.findStr }'>

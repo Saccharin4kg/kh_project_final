@@ -24,8 +24,8 @@
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>
-		<span class='sub'>제목</span>
-		<span class='name'>작성자</span>
+		<span class='sub'>서류번호</span>
+		<span class='name'>제목</span>
 		<span class='date'>작성일</span>
 		<span class='type'>종류</span>
 	</div>

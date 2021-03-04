@@ -229,60 +229,57 @@ commit;
 
 /*작성중기안*/
 insert into draft_info(paper_no, emp_no, title, purpose, subject, remark, date_write, attach, staff, gm, dm, ceo, state)
-values (PAPER_NO_SEQ.nextval, '10011', '작성중', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, null, null, null, null, 0);
+values (PAPER_NO_SEQ.nextval, '10011', '인수계획 임시', '테스트를 위한 ', '테스트내용', '테스트비고', sysdate, null, 10011, 10004, null, null, 0);
 /*결재기안*/
 insert into draft_info
-values (PAPER_NO_SEQ.nextval, '10011', '결재중', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, null, null, null, null, 1);
+values (PAPER_NO_SEQ.nextval, '10011', 'Y사 인수', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, 10011, 10004, null, null, 1);
 /*완료기안*/
 insert into draft_info
-values (PAPER_NO_SEQ.nextval, '10011', '완료', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, null, null, null, null, 2);
+values (PAPER_NO_SEQ.nextval, '10011', '협상완료', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, 10011, 10004, null, null, 2);
 /*보류기안*/
 insert into draft_info
-values (PAPER_NO_SEQ.nextval, '10011', '보류', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, null, null, null, null, 3);
+values (PAPER_NO_SEQ.nextval, '10011', '정수기 구입', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, 10011, 10004, null, null, 3);
 /*부결기안*/
 insert into draft_info
-values (PAPER_NO_SEQ.nextval, '10011', '부결', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, null, null, null, null, 4);
+values (PAPER_NO_SEQ.nextval, '10011', '회식 제한', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, 10011, 10004, null, null, 4);
 
 /*작성중품의*/
 insert into stuff_info
-values (PAPER_NO_SEQ.nextval, '10011', '작성중', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, null, null, null, null, 0);
+values (PAPER_NO_SEQ.nextval, '10011', 'A4용지', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, 10011, 10004, null, null, 0);
 /*결재품의*/
 insert into stuff_info
-values (PAPER_NO_SEQ.nextval, '10011', '결재중', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, null, null, null, null, 1);
+values (PAPER_NO_SEQ.nextval, '10011', '프린터 잉크 5매', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, 10011, 10004, null, null, 1);
 /*완료품의*/
 insert into stuff_info
-values (PAPER_NO_SEQ.nextval, '10011', '완료', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, null, null, null, null, 2);
+values (PAPER_NO_SEQ.nextval, '10011', '스테이플러 20매', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, 10011, 10004, null, null, 2);
 /*보류품의*/
 insert into stuff_info
-values (PAPER_NO_SEQ.nextval, '10011', '보류', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, null, null, null, null, 3);
+values (PAPER_NO_SEQ.nextval, '10011', '클립 20박스', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, 10011, 10004, null, null, 3);
 /*부결품의*/
 insert into stuff_info
-values (PAPER_NO_SEQ.nextval, '10011', '부결', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, null, null, null, null, 4);
+values (PAPER_NO_SEQ.nextval, '10011', '엄마손파이 5박스', '테스트를 위한 서류', '5만원', '테스트비고', sysdate, null, 10011, 10004, null, null, 4);
 
 /*작성중근태*/
 insert into attendance_info
 values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청작성중', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 0);
 /*결재근태*/
 insert into attendance_info
-values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청결재', '테스트', '테스트비고', sysdate, null, null, null, null, null, 1);
+values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '지각', '지각했습니다 죄송합니다', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 1);
 /*완료근태*/
 insert into attendance_info
-values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청완료', '테스트', '테스트비고', sysdate, null, null, null, null, null, 2);
+values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '교육', '사원교육', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 2);
 /*보류근태*/
 insert into attendance_info
-values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청보류', '테스트', '테스트비고', sysdate, null, null, null, null, null, 3);
+values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '공과', '외부출장 신청', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 3);
 /*부결근태*/
 insert into attendance_info
-values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청부결', '테스트', '테스트비고', sysdate, null, null, null, null, null, 4);
+values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '조퇴', '감기증상으로 조퇴신청합니다', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 4);
 
 SELECT * FROM draft_info;
-SELECT * FROM draft_info WHERE emp_no = 10011 AND state = 0;
 
 SELECT * FROM stuff_info;
-SELECT * FROM stuff_info WHERE emp_no = 10004;
 
 SELECT * FROM attendance_info;
-SELECT * FROM attendance_info WHERE emp_no = 10004;
 
 /*내결재*/
 SELECT paper_no,title,date_write FROM draft_info WHERE emp_no = 10011

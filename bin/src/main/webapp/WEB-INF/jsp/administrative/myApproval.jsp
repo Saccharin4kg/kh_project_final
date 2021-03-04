@@ -1,5 +1,10 @@
+<%@page import="kh.projectfinal.mapper.EmpInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%
+	EmpInfo info = (EmpInfo)session.getAttribute("emp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +16,11 @@
 <div id='approval'>
 	<h3>내결재</h3>
 	<form name='frm_approval' method='post' id='frm_approval'>
-			<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
-			<input type='button' value='검색' id='btnFind'/>
-			<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
-			<input type='hidden' name='mid' />
+		<input type='text' name='findStr' class='findStr' value='${param.findStr }'>
+		<input type='button' value='검색' id='btnFind'/>
+		<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
+		<input type='hidden' name='mid' />
+		<input type='hidden' name='url' value='/myApproval?&empNo=<%= info.getEmpNo() %>'/>
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>
@@ -24,35 +30,13 @@
 		<span class='type'>종류</span>
 	</div>
 	<div class='items'>
-		<div class='item' onclick="adGoUrl('/attendanceApproval')">
-			<span class='no'>1</span>
-			<span class='sub'>근태결재 임시</span>
-			<span class='date'>작성일</span>
-			<span class='appr'>결재자</span>
-			<span class='type'>근태</span>
-		</div>
-		<div class='item' onclick="adGoUrl('/stuffApproval')">
-			<span class='no'>2</span>
-			<span class='sub'>품의결재 임시</span>
-			<span class='date'>작성일</span>
-			<span class='appr'>결재자</span>
-			<span class='type'>품의</span>
-		</div>
-		<div class='item' onclick="adGoUrl('/draftApproval')">
-			<span class='no'>3</span>
-			<span class='sub'>기안결재 임시</span>
-			<span class='date'>작성일</span>
-			<span class='appr'>결재자</span>
-			<span class='type'>기안</span>
-		</div>
 		<c:set var='no' value='${page.startNo }'/>
 		<c:forEach var='vo' items="${list }">
-			<div class='item' onclick="view('${vo.mid}')">
+			<div class='item' onclick="view('${vo.paper_no}')">
 				<span class='no'>${no }</span>
-				<span class='mid'>${vo.mid }</span>
-				<span class='name'>${vo.name }</span>
-				<span class='email'>${vo.email }</span>
-				<span class='mdate'>${vo.mdate }</span>
+				<span class='name'>${vo.paper_no }</span>
+				<span class='sub'>${vo.title }</span>
+				<span class='date'>${vo.date_write }</span>
 			</div>
 			<c:set var='no' value = '${no=no+1 }'/>
 		</c:forEach>
@@ -76,5 +60,6 @@
 		</c:if>	
 	</div>
 </div>
+<script>app()</script>
 </body>
 </html>
