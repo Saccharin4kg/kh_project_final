@@ -9,9 +9,10 @@ public class Page {
 	int endNo;
 	int nowPage;
 	int listSize = 15;
-	int blockSize = 5;
+	int blockSize = 10;
 	String findStr;
 	int state;
+	int empNo;
 
 	public Page() {
 	}
@@ -28,6 +29,14 @@ public class Page {
 
 	public void setState(int state) {
 		this.state = state;
+	}
+
+	public int getEmpNo() {
+		return empNo;
+	}
+
+	public void setEmpNo(int empNo) {
+		this.empNo = empNo;
 	}
 
 	public void pageCompute() {

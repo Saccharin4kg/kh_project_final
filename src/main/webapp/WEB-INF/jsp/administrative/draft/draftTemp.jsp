@@ -1,6 +1,10 @@
+<%@page import="kh.projectfinal.mapper.EmpInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%
+	EmpInfo info = (EmpInfo)session.getAttribute("emp");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +22,7 @@
 		<input type='button' value='검색' id='btnFind'/>
 		<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage }'/>
 		<input type='hidden' name='mid' />
-		<input type='hidden' name='url' value='/draftTemp?&state=0'/>
+		<input type='hidden' name='url' value='/draftTemp?&state=0&empNo=<%= info.getEmpNo() %>'/>
 	</form>
 	<div class='title'>
 		<span class='no'>NO</span>

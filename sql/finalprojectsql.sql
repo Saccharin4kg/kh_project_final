@@ -1,5 +1,5 @@
 /*일괄삭제*/
-DROP TABLE deport_info CASCADE CONSTRAINTS;
+DROP TABLE depart_info CASCADE CONSTRAINTS;
 DROP TABLE class_info CASCADE CONSTRAINTS;
 DROP TABLE emp_info CASCADE CONSTRAINTS;
 DROP TABLE draft_info CASCADE CONSTRAINTS;
@@ -41,7 +41,7 @@ CREATE TABLE draft_security (
 CREATE TABLE emp_info (
 	emp_no	number		NOT NULL,
 	class_no	number		NOT NULL,
-	deport_no	number		NOT NULL,
+	depart_no	number		NOT NULL,
 	emp_name	varchar2(30)		NOT NULL,
 	super_no	number		NULL,
 	hire_date	date		NOT NULL,
@@ -126,9 +126,9 @@ CREATE TABLE class_info (
 
 COMMENT ON COLUMN class_info.class_no IS '1:사원 2:과장 3:부장 4:사장';
 
-CREATE TABLE deport_info (
-	deport_no	number		NOT NULL,
-	deport_name	varchar2(30)		NOT NULL
+CREATE TABLE depart_info (
+	depart_no	number		NOT NULL,
+	depart_name	varchar2(30)		NOT NULL
 );
 
 ALTER TABLE draft_info ADD CONSTRAINT PK_DRAFT_INFO PRIMARY KEY (
@@ -151,8 +151,8 @@ ALTER TABLE class_info ADD CONSTRAINT PK_CLASS_INFO PRIMARY KEY (
 	class_no
 );
 
-ALTER TABLE deport_info ADD CONSTRAINT PK_DEPORT_INFO PRIMARY KEY (
-	deport_no
+ALTER TABLE depart_info ADD CONSTRAINT PK_DEPART_INFO PRIMARY KEY (
+	depart_no
 );
 
 /*서류번호 시퀀스*/
@@ -177,16 +177,16 @@ commit;
 SELECT * FROM class_info;
 
 /*부서 임시*/
-insert into deport_info
+insert into depart_info
 values (0, '사장');
 
-insert into deport_info
+insert into depart_info
 values (1, '설계부');
 
-insert into deport_info
+insert into depart_info
 values (2, '제작부');
 
-SELECT * FROM deport_info;
+SELECT * FROM depart_info;
 
 /*직원 임시*/
 
@@ -228,7 +228,7 @@ SELECT * FROM emp_info;
 commit;
 
 /*작성중기안*/
-insert into draft_info
+insert into draft_info(paper_no, emp_no, title, purpose, subject, remark, date_write, attach, staff, gm, dm, ceo, state)
 values (PAPER_NO_SEQ.nextval, '10011', '작성중', '테스트를 위한 서류', '테스트내용', '테스트비고', sysdate, null, null, null, null, null, 0);
 /*결재기안*/
 insert into draft_info
@@ -261,7 +261,7 @@ values (PAPER_NO_SEQ.nextval, '10011', '부결', '테스트를 위한 서류', '5만원', '�
 
 /*작성중근태*/
 insert into attendance_info
-values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청작성중', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 1);
+values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청작성중', '테스트', '테스트비고', sysdate, null, 10011, 10004, null, null, 0);
 /*결재근태*/
 insert into attendance_info
 values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청결재', '테스트', '테스트비고', sysdate, null, null, null, null, null, 1);
@@ -276,13 +276,13 @@ insert into attendance_info
 values (PAPER_NO_SEQ.nextval, '10011', 2021, 02, 28, 2021, 03, 04, '휴가', '휴가신청부결', '테스트', '테스트비고', sysdate, null, null, null, null, null, 4);
 
 SELECT * FROM draft_info;
-SELECT * FROM draft_info WHERE state = 4;
+SELECT * FROM draft_info WHERE emp_no = 10011 AND state = 0;
 
 SELECT * FROM stuff_info;
-SELECT * FROM stuff_info WHERE state = 4;
+SELECT * FROM stuff_info WHERE emp_no = 10004;
 
 SELECT * FROM attendance_info;
-SELECT * FROM attendance_info WHERE state = 4;
+SELECT * FROM attendance_info WHERE emp_no = 10004;
 
 /*내결재*/
 SELECT paper_no,title,date_write FROM draft_info WHERE emp_no = 10011
@@ -301,22 +301,73 @@ SELECT paper_no,title,date_write FROM attendance_info WHERE (gm = 10004 AND dm I
 order by paper_no desc;
 
 /*임시보관 결재중 결재완료 결재보류 결재부결*/
-SELECT paper_no,title,date_write FROM draft_info WHERE state = 0;
-SELECT paper_no,title,date_write FROM draft_info WHERE state = 1;
+SELECT * FROM draft_info;
+SELECT paper_no,title,date_write FROM draft_info WHERE state = 0 and (emp_no = 10011 or staff = 10011 or gm = 10011 or dm = 10011 or ceo=10011);
+SELECT paper_no,title,date_write FROM draft_info WHERE state = 1 and (emp_no = 10011 or staff = 10011 or gm = 10011 or dm = 10011 or ceo=10011);
 SELECT paper_no,title,date_write FROM draft_info WHERE state = 2;
 SELECT paper_no,title,date_write FROM draft_info WHERE state = 3;
 SELECT paper_no,title,date_write FROM draft_info WHERE state = 4;
 
-SELECT paper_no,title,date_write FROM stuff_info WHERE state = 0;
+SELECT * FROM stuff_info;
+SELECT paper_no,title,date_write FROM stuff_info WHERE state = 0 and (emp_no = 10011 or staff = 10011 or gm = 10011 or dm = 10011 or ceo=10011);
 SELECT paper_no,title,date_write FROM stuff_info WHERE state = 1;
 SELECT paper_no,title,date_write FROM stuff_info WHERE state = 2;
 SELECT paper_no,title,date_write FROM stuff_info WHERE state = 3;
 SELECT paper_no,title,date_write FROM stuff_info WHERE state = 4;
 
-SELECT paper_no,title,date_write FROM attendance_info WHERE state = 0;
+SELECT * FROM attendance_info;
+SELECT paper_no,title,date_write FROM attendance_info WHERE state = 0 and (emp_no = 10004 or staff = 10004 or gm = 10004 or dm = 10004 or ceo=10004);
 SELECT paper_no,title,date_write FROM attendance_info WHERE state = 1;
 SELECT paper_no,title,date_write FROM attendance_info WHERE state = 2;
 SELECT paper_no,title,date_write FROM attendance_info WHERE state = 3;
 SELECT paper_no,title,date_write FROM attendance_info WHERE state = 4;
 
 commit;
+
+
+select * from (
+select rownum rno, m.* from
+(
+select paper_no,title,date_write from draft_info
+where (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and (emp_no = ${empNo} or staff = ${empNo} or gm = ${empNo} or dm = ${empNo} or ceo= ${empNo})
+UNION
+select paper_no,title,date_write from stuff_info
+where (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and (emp_no = ${empNo} or staff = ${empNo} or gm = ${empNo} or dm = ${empNo} or ceo= ${empNo})
+UNION
+select paper_no,title,date_write from attendance_info
+where (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and (emp_no = ${empNo} or staff = ${empNo} or gm = ${empNo} or dm = ${empNo} or ceo= ${empNo})
+order by
+paper_no desc
+) m
+) where
+rno between #{startNo} and #{endNo};    
+
+select * from (
+select rownum rno, m.* from
+(
+SELECT paper_no,title,date_write FROM draft_info WHERE (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and ((gm = ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR (ceo = ${empNo} AND state = 1))
+UNION 
+SELECT paper_no,title,date_write FROM stuff_info WHERE (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and ((gm = ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR (ceo = ${empNo} AND state = 1))
+UNION 
+SELECT paper_no,title,date_write FROM attendance_info WHERE (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and ((gm = ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR (ceo = ${empNo} AND state = 1))
+order by paper_no desc
+) m
+) where
+rno between #{startNo} and #{endNo}
+
+select count(paper_no) from (
+SELECT paper_no,title,date_write FROM draft_info WHERE (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and ((gm = ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR (ceo = ${empNo} AND state = 1))
+UNION 
+SELECT paper_no,title,date_write FROM stuff_info WHERE (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and ((gm = ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR (ceo = ${empNo} AND state = 1))
+UNION 
+SELECT paper_no,title,date_write FROM attendance_info WHERE (paper_no like '%${findStr}%' or title like '%${findStr}%' or date_write like '%${findStr}%')
+and ((gm = ${empNo} AND dm IS null AND state = 1) OR (dm = ${empNo} AND ceo IS null AND state = 1) OR (ceo = ${empNo} AND state = 1))
+)
