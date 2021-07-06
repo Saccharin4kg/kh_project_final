@@ -49,6 +49,10 @@ ERD
 ![image](https://user-images.githubusercontent.com/73331119/124536347-cc3a7600-de52-11eb-91d0-b780b014fc9b.png)
 ![image](https://user-images.githubusercontent.com/73331119/124536356-cf356680-de52-11eb-958b-4d22d61a985a.png)
 
+직책의 표현 방식
+
+![이해](https://user-images.githubusercontent.com/73331119/124536809-a2358380-de53-11eb-9c3c-07ebd217fbbe.png)
+
 화면구성
 
 메인화면
